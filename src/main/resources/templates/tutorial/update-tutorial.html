@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WELCOME</title>
+	<style>
+		table {
+			font-family: arial, sans-serif;
+			border-collapse: collapse;
+			width: 100%;
+			
+		}
+
+		td,
+		th {
+			border: 1px solid #dddddd;
+			text-align: left;
+			padding: 8px;
+		}
+
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	</style>
+</head>
+
+<body>
+	<h3>DETAIL TUTORIAL</h3>
+	<table>
+	<form action="/updateTutotrial" method="post" th:object ="${tutorial}">
+		<input th:field = "*{id}" hidden><br>
+		<tr>
+		<td><label>TITLE</label></td>
+		<td><label>DESCRIPTION</label></td>
+		</tr>
+		<tr>
+		<td><input th:field="*{title} "><br></td>
+		
+		<td><input th:field="*{description} "><br></td>
+		</tr>
+		<tr><td><button type="submit">UPDATE</button></td></tr>
+	</form>
+	</table>
+</body>
+
+</html>

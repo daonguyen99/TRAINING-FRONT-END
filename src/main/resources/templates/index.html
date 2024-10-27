@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>WELCOME</title>
+	<style>
+				table {
+					font-family: arial, sans-serif;
+					border-collapse: collapse;
+					width: 100%;
+				}
+
+				td,
+				th {
+					border: 1px solid #dddddd;
+					text-align: left;
+					padding: 8px;
+				}
+
+				tr:nth-child(even) {
+					background-color: #dddddd;
+				}
+			</style>
+</head>
+<body>
+	<center><h1>CREATE NEW TUTORIAL</h1></center>
+	<a href="/tutorial">DANH SÁCH</a>
+	<table>
+	<form th:action="@{/create}" method="post">
+		<tr>
+		<td><label>TITLE</label></td>
+		<td><label>DESCRIPTION</label></td>
+		<td><label>COUNT</label></td>
+		</tr>
+		<tr>
+		<td><input type="text" id="title" name="title" class="form-control" /><br></td>
+	
+		<td><input type="text" id="description" name="description" class="form-control" /><br></td>
+		
+		<td><input type="text" id="count" name="count" class="form-control" /><br></td>
+		</tr>	
+		
+			<tr><td><input type="submit" value="XÁC NHẬN" /></td>
+			</tr>
+	</form>
+	</table>
+	
+</body>
+
+</html>

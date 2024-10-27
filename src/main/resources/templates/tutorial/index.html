@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>WELCOME</title>
+	<style>
+					table {
+						font-family: arial, sans-serif;
+						border-collapse: collapse;
+						width: 100%;
+					}
+
+					td,
+					th {
+						border: 1px solid #dddddd;
+						text-align: left;
+						padding: 8px;
+					}
+
+					tr:nth-child(even) {
+						background-color: #dddddd;
+					}
+				</style>
+
+</head>
+
+<body>
+	<h3>HOME</h3>
+	<div>
+		<form class="form-search" method="get" th:action="@{/searchTutorial}">
+			<input id="searchKey" type="search" name="searchKey" th:value="${searchKey}" class="form-control">
+			<button type="submit">TÌM KIẾM</button>
+			
+		</form>
+	</div>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>TITLE</th>
+			<th>DESCRIPTION</th>
+			<th>UPDATE</th>
+			<th>DELECT</th>
+		</tr>
+		<tr th:each="dto:${tutorialList}">
+			<td>[[${dto.id}]]</td>
+			<td>[[${dto.title}]] </td>
+			<td>[[${dto.description}]] </td>
+			<td><a th:href="@{/editTutorial/{id}(id = ${dto.id})}">UPDATE</a></td>
+			<td><a th:href="@{'/tutorial/' + ${dto.id}}">DELECT</a></td>
+		</tr>
+	</table>
+</body>
+
+</html>
